@@ -240,6 +240,67 @@
             </ul>
           </section>
           <section>
+            <h2>The platform.sh architecture</h2>
+            <img src="images/Screen Shot 2015-04-14 at 00.41.14.png" alt="Screen Shot 2015 04 14 At 00.41.14">
+          </section>
+          <section>
+            <h2>Shared nothing architecture, no central service.</h2>
+            <ul>
+                <li><ul>Outer layer handles:
+                <li>HTTP and SSH reverse proxying</li>
+               <li>DoS mitigation</li>
+              <li>SSL termination</li>
+              <li>MongoDB there mostly for legacy reasons (friends don't let friends use mongo in production)</li>
+              </li>
+             </ul></li>
+             <li>Inner most layer Coordinators a distributed Eye Of Mordor kind of thing
+              <li>Inbetween, the grid of containers, hundreds or thousands per host</li>
+              </li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>Every application cluster is self contained</h2>
+            <ul>
+              <li>
+                <ul>Often
+                  <li>The Git server</li>
+                  <li>A router</li>
+                  <li>App server</li>
+                  <li>Possibly a couple of others (micro-services!)</li>
+                  <li>A cache</li>
+                  <li>A Databse</li>
+                  <li>A Search Engine</li>
+                </li>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Dense highly available micro-container grid</h2>
+            <ul>
+              <li>We can run thousands of useful containers on a single server</li>
+              <li>No operation has downtime</li>
+              <li>Everything is distributed and replicated</li>
+              <li>Yeah, we know Docker. But no.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>API all the things</h2>
+            <ul>
+              <li>Git is the main one; Everything is a git object</li>
+              <li>Our web site is 100% hypermedia driven</li>
+              <li>All of the billing is API driven</li>
+              <li>Great CLI</li>
+              <li>much more to come</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Debian all the way down</h2>
+            <ul>
+              <li>Because stable</li>
+            </ul>
+          </section>
+          <section>
             <h2>Conservative Bleeding Edge on platform.sh</h2>
             <ul>
               <li>80% Python</li>
@@ -278,31 +339,6 @@
             <ul>
               <li>Almost forgot about that...</li>
               <li>.. runs our very complex recurrent billing framework as a service</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Dense highly available micro-container grid</h2>
-            <ul>
-              <li>We can run thousands of useful containers on a single server</li>
-              <li>No operation has downtime</li>
-              <li>Everything is distributed and replicated</li>
-              <li>Yeah, we know Docker. But no.</li>
-            </ul>
-          </section>
-          <section>
-            <h2>API all the things</h2>
-            <ul>
-              <li>Git is the main one; Everything is a git object</li>
-              <li>Our web site is 100% hypermedia driven</li>
-              <li>All of the billing is API driven</li>
-              <li>Great CLI</li>
-              <li>much more to come</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Debian all the way down</h2>
-            <ul>
-              <li>Because stable</li>
             </ul>
           </section>
         </section>
